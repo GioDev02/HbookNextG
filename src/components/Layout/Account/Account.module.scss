@@ -1,0 +1,61 @@
+@import "~/src/scss/index.scss";
+
+.account {
+    display: flex;
+
+    button {
+        background-color: transparent !important;
+        /*Para sobreescribir estilos de semantic*/
+        margin-left: 10px !important;
+
+        &:hover {
+            >i {
+                color: $primary;
+            }
+        }
+
+        >i {
+            font-size: 18px;
+            height: 20px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 500px) {
+
+                height: 10px !important;
+                font-size: 15px;
+                ;
+
+            }
+        }
+    }
+
+    .cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >div {
+            background-color: $primary;
+            color: $text-primary ;
+            font-size: 10px;
+            margin-left: 5px;
+        }
+    }
+
+    .user {
+        background-color: $background-tertiary !important;
+        border-radius: 10px;
+        border: 2px solid $background-tertiary;
+
+        &:hover {
+            border-radius: 2px solid primary;
+
+            i {
+                color: $text-primary ;
+            }
+        }
+
+    }
+}

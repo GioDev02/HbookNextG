@@ -1,0 +1,83 @@
+import { useState, useEffect, createContext } from "react";
+import { Cart } from "@/api";
+
+const cartCtrl = new Cart();
+
+export const CartContext = createContext();
+
+export function CartProvider(props) {
+    const { children } = props;
+    const [cart, setCart] = useState(null);
+    const [total, setTotal] = useState(cartCtrl.count());
+
+    useEffect(() => {
+        const response = cartCtrl.getAll();
+        setCart(response);
+    }, []);
+
+    const addCart = (bookId) => {
+        cartCtrl.add(bookId);
+        refreshTotalCart();
+    };
+
+    const changeQuantityItem = (bookId, quantity) => {
+        cartCtrl.changeQuantity(bookId, quantity);
+        refreshTotalCart();
+    };
+
+    const deleteItem = (bookId) => {
+        cartCtrl.delete(bookId);
+        refreshTotalCart();
+    };
+    /*
+        const changeQuantityItem = (gameId, quantity) => {
+            cartCtrl.changeQuantity(gameId, quantity);
+            refreshTotalCart();
+        };
+    
+        
+    
+        const deleteAllItems = () => {
+            cartCtrl.deleteAll();
+            refreshTotalCart();
+        };
+    
+        const refreshTotalCart = () => {
+            setTotal(cartCtrl.count());
+            setCart(cartCtrl.getAll());
+        };
+    */
+
+    const deleteAllItems = () => {
+        cartCtrl.deleteAll();
+        refreshTotalCart();
+    };
+
+    const refreshTotalCart = () => {
+        setTotal(cartCtrl.count());
+        setCart(cartCtrl.getAll());
+    };
+    const data = {
+        cart,
+        addCart,
+        total,
+        changeQuantityItem,
+        deleteItem,
+        deleteAllItems
+
+    };
+
+    return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
+}
+
+/**
+ * 
+ *  const data = {
+        cart,
+        addCart,
+        total,
+        deleteItem,
+        deleteAllItems,
+        changeQuantityItem, Cambiar la cantidad de un item
+    };
+ */
