@@ -1,6 +1,6 @@
 export const ENV = {
-    SERVER_HOST: "http://127.0.0.1:1337",
-    API_URL: "http://127.0.0.1:1337/api",
+    SERVER_HOST: "https://hbookservegio.up.railway.app",
+    API_URL: "https://hbookservegio.up.railway.app/api",
     ENDPOINTS: {
         AUTH: {
             REGISTER: "auth/local/register",
