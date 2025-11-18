@@ -9,7 +9,7 @@ const userCtrl = new User();
 
 export function ChangeEmailForm() {
     const { user, updateUser } = useAuth();
-    console.log("changeform valor de ujser", useAuth());
+
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),

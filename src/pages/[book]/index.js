@@ -8,7 +8,7 @@ export async function getServerSideProps(context) {
     const {
         params: { book },
     } = context;
-    console.log("book param: ", book);
+    // console.log("book param: ", book);
 
     const bookCtrl = new Book();
     const response = await bookCtrl.getBySlug(book);

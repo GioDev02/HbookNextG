@@ -13,7 +13,6 @@ export class Token {
     hasExpired(token) {
         //decodificando el token
         const tokenDeCode = jwtDecode(token);
-        console.log(tokenDeCode);
         const expireDate = tokenDeCode.exp * 1000 // para convertirlo en milisegundos que es lo necesario en js  -> FECHA EXPIRACION 
         const currentDate = new Date().getTime();  // - >Fecha acatual 
 

@@ -9,7 +9,7 @@ export function JoinLayout(props) {
     const { children } = props;
     const router = useRouter();
     const { user } = useAuth();
-    console.log("valoir de useRouter", router);
+    //console.log("valoir de useRouter", router);
     console.log(user);
 
     //recordar que un usuario logueado no puede acceder ni al registro ni al login de usuario 

@@ -15,7 +15,7 @@ export class User {
 
             const result = await response.json();
             if (response.status != 200) throw result;
-            console.log("holam edsde user")
+
             return result;
         }
         catch (error) {

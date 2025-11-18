@@ -4,8 +4,6 @@ export async function authFetch(url, params) {
     const tokenCtrl = new Token();
     const token = tokenCtrl.getToken();
 
-    // console.log(token);
-    // console.log(url);
 
     const logout = () => {
         tokenCtrl.removeToken();

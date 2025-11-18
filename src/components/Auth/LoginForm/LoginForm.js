@@ -9,7 +9,7 @@ const authCtrl = new Auth();
 export function LoginForm() {
     const router = useRouter();
     const { login } = useAuth();
-    console.log(useAuth());
+
 
     const formik = useFormik({
         initialValues: initialValues(),
@@ -19,7 +19,7 @@ export function LoginForm() {
             try {
                 const response = await authCtrl.login(formValue);
                 login(response.jwt);
-                console.log(response);
+                // console.log(response);
                 // router.push("/");
             }//ME QUEDO AQUI SABER POR QUE LUEGO DE TENER EL RESPONSE LE MANDO A LOGIN Y COMO SE ACTUALIZA ESE RESPONSE CON EL VALOR QUE ENVIE A LOGIN
             catch (error) {

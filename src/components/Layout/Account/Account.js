@@ -12,7 +12,7 @@ export function Account() {
     const { user } = useAuth();
     const router = useRouter();
     const { total } = useCart();
-    console.log("Total en Account:", total);
+    // console.log("Total en Account:", total);
 
 
     const goToLogin = () => router.push("/join/sign-in");
