@@ -5,8 +5,6 @@ import { Separator, Seo } from "@/components/Shared";
 export default function BookPage(props) {
     const { book } = props;
     const wallpaper = book.attributes.wallpaper;
-    console.log("Book", book)
-    console.log("dinamica", props);
     return (
         <>
             <Seo
@@ -28,25 +26,16 @@ export default function BookPage(props) {
     );
 }
 
-/** <Seo
-                title={game.attributes.title}
-                description={game.attributes.summary}
-            />
-           <Book.HeaderWallpaper image={wallpaper.data.attributes.url} />
-                <Book.Panel gameId={game.id} game={game.attributes} />
-
-                <Separator height={50} />
-
-                <Book.Info game={game.attributes} />
-
-                <Separator height={30} />
-
-                <Book.Media
-                    video={game.attributes.video}
-                    screenshots={game.attributes.screenshots.data}
-                />
-
-                <Separator height={50} />  
-            
-            
-            */
+export async function getServerSideProps(context) {
+    const {
+        params: { book },
+    } = context;
+    const bookCtrl = new Book();
+    const response = await bookCtrl.getBySlug(book);
+    console.log("dinamica", response);
+    return {
+        props: {
+            book: response,
+        },
+    };
+}
