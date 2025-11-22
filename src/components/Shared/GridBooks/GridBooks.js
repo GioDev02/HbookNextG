@@ -20,7 +20,7 @@ export function GridBooks(props) {
                     className={styles.book}
                 >
                     <div>
-                        <img src={`${ENV.SERVER_HOST}${book.attributes.cover.data.attributes.url}`} />
+                        <img src={book.attributes.cover.data.attributes.url} />
                         {book.attributes.discount > 0 && (
                             <Label.Discount className={styles.discount}>
                                 {`-${book.attributes.discount}%`}

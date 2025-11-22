@@ -29,24 +29,6 @@ export function CartProvider(props) {
         cartCtrl.delete(bookId);
         refreshTotalCart();
     };
-    /*
-        const changeQuantityItem = (gameId, quantity) => {
-            cartCtrl.changeQuantity(gameId, quantity);
-            refreshTotalCart();
-        };
-    
-        
-    
-        const deleteAllItems = () => {
-            cartCtrl.deleteAll();
-            refreshTotalCart();
-        };
-    
-        const refreshTotalCart = () => {
-            setTotal(cartCtrl.count());
-            setCart(cartCtrl.getAll());
-        };
-    */
 
     const deleteAllItems = () => {
         cartCtrl.deleteAll();

@@ -6,7 +6,7 @@ export function HeaderWallpaper(props) {
 
     return (
         <div className={styles.headerWallpaper}>
-            <Image src={`${ENV.SERVER_HOST}${image}`} />
+            <Image src={image} />
         </div>
     );
 }

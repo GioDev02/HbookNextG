@@ -25,7 +25,7 @@ export function Panel(props) {
     return (
         <Container className={styles.panel}>
             <div className={styles.imgContiner}>
-                <Image src={`${ENV.SERVER_HOST}${book.cover.data.attributes.url}`} />
+                <Image src={book.cover.data.attributes.url} />
             </div>
 
             <div className={styles.actionsContainer}>
@@ -35,7 +35,7 @@ export function Panel(props) {
                     <div className={styles.moreInfo}>
                         <span>
 
-                            <Image src={`${ENV.SERVER_HOST}${category.attributes.icon.data.attributes.url}`} />
+                            <Image src={category.attributes.icon.data.attributes.url} />
                             {category.attributes.title}
                         </span>
                         <span>
@@ -71,11 +71,3 @@ export function Panel(props) {
         </Container>
     );
 }
-
-/**
-                    <Button primary fluid onClick={addCartWrapper} loading={loading}>
-                        Comprar ahora
-                    </Button>
-                     <Image src={category.attributes.icon.data.attributes.url} />
-                      <WishlistIcon gameId={bookId} className={styles.heart} />
-                    */

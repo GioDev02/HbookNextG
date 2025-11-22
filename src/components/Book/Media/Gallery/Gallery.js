@@ -22,7 +22,7 @@ export function Gallery(props) {
         slidesToScroll: 1,
         arrows: false,
         customPaging: function (index) {
-            return <Image src={`${ENV.SERVER_HOST}${screenshots[index].attributes.url}`} />
+            return <Image src={screenshots[index].attributes.url} />
         },
     };
 
@@ -31,7 +31,7 @@ export function Gallery(props) {
             <div className={styles.gallery}>
                 <div className={styles.principal}>
 
-                    <Image src={`${ENV.SERVER_HOST}${principalImage.attributes.url}`}
+                    <Image src={principalImage.attributes.url}
                         onClick={onOpenClose}
                     />
                 </div>
@@ -39,7 +39,7 @@ export function Gallery(props) {
                 <div className={styles.grid}>
                     {map(screenshotsClone, (screenshot) => (
                         <div key={screenshot.id}>
-                            <Image src={`${ENV.SERVER_HOST}${screenshot.attributes.url}`} onClick={onOpenClose} />
+                            <Image src={screenshot.attributes.url} onClick={onOpenClose} />
                         </div>
                     ))}
                 </div>
@@ -50,7 +50,7 @@ export function Gallery(props) {
                     <Slider {...settings}>
                         {map(screenshots, (screenshot) => (
                             <div key={screenshot.id}>
-                                <Image src={`${ENV.SERVER_HOST}${screenshot.attributes.url}`} />
+                                <Image src={screenshot.attributes.url} />
                             </div>
                         ))}
                     </Slider>

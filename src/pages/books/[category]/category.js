@@ -13,7 +13,7 @@ import {
 export default function CategoryPage(props) {
     console.log(props);// props recibidos de forma automatica de getServerSideProps
     const { books, category, pagination } = props;
-    const hasProducts = size(books) > 0; /**    const hasProducts = size(games) > 0; */
+    const hasProducts = size(books) > 0;
 
     return (
         <>
@@ -46,7 +46,3 @@ export default function CategoryPage(props) {
         </>
     );
 }
-
-/** <NoResult
-                            text={`La categoria ${category.attributes.title} aun no tiene productos`}
-                        /> */

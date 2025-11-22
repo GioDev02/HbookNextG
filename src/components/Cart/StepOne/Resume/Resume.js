@@ -52,15 +52,15 @@ export function Resume(props) {
                 <div className={styles.prices}>
                     <div>
                         <span>Precio oficial</span>
-                        <span>{totals.original.toFixed(2)}€</span>
+                        <span>S/.{totals.original.toFixed(2)}</span>
                     </div>
                     <div>
                         <span>Descuento</span>
-                        <span>{totals.discount.toFixed(2)}€</span>
+                        <span>S/.{totals.discount.toFixed(2)}</span>
                     </div>
                     <div>
                         <span>Subtotal</span>
-                        <span>{totals.price.toFixed(2)}€</span>
+                        <span>S/.{totals.price.toFixed(2)}</span>
                     </div>
                 </div>
 

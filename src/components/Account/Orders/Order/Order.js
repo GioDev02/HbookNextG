@@ -49,7 +49,7 @@ export function Order(props) {
                 {map(products, (product) => (
                     <div className={styles.product}>
                         <Image
-                            src={`${ENV.SERVER_HOST}${product.attributes.cover.data.attributes.url}`} />
+                            src={product.attributes.cover.data.attributes.url} />
 
                         <div>
                             <div className={styles.info}>

@@ -21,7 +21,7 @@ export function Basket(props) {
             <div className={styles.block}>
                 {map(books, (book) => (
                     <div key={book.id} className={styles.product}>
-                        <img src={`${ENV.SERVER_HOST}${book.attributes.cover.data.attributes.url}`} />
+                        <img src={book.attributes.cover.data.attributes.url} />
                         <div className={styles.contenido}>
                             <div className={styles.info}>
                                 <div>

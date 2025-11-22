@@ -35,17 +35,10 @@ export function BannerLastBookPublished() {
         book.attributes.price,
         book.attributes.discount
     );
-    /*
-        const wallpaper = game.attributes.wallpaper;
-        const releaseDate = new Date(game.attributes.releaseDate).toISOString();
-        const price = fn.calcDiscountedPrice(
-            game.attributes.price,
-            game.attributes.discount
-        );*/
 
     return (
         <div className={styles.container}>
-            <Image src={`${ENV.SERVER_HOST}${wallpaper.data.attributes.url}`}
+            <Image src={wallpaper.data.attributes.url}
                 className={styles.wallpaper}
             />
 

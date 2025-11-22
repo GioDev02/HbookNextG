@@ -54,7 +54,7 @@ export function Menu(props) {
         <div className={styles.categories}>
             {map(categories, (category) => (
                 <Link key={category.id} href={`/books/${category.attributes.slug}`} >
-                    <Image src={`${ENV.SERVER_HOST}${category.attributes.icon.data.attributes.url}` /*SERVER_HOST A BORRAR SI ES QUE DECIDO USAR S3 O DEJARLO SI USO PLAN PERSISTENTE DE RENDER*/}
+                    <Image src={category.attributes.icon.data.attributes.url}
                     />
                     <p>{category.attributes.title}</p>
                     {console.log(category.attributes.icon.data.attributes.url)}

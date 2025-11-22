@@ -32,14 +32,3 @@ export function LatestBooks(props) {
         </div>
     );
 }
-
-/**
- * 
- 
-    return (
-        <div>
-            <h2>{title}</h2>
-            <GridGames games={games} />
-        </div>
-    );
- */
