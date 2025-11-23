@@ -9,8 +9,33 @@
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 768px) {
+        padding: 15px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 10px;
+        margin-bottom: 10px;
+        gap: 8px;
+    }
+
     >div {
         display: flex;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: 100%;
+
+            &:last-child {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
     }
 }
 
@@ -18,16 +43,55 @@
     margin-right: 5px;
     font-weight: bold;
     font-size: 16px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 }
 
 .addressInfo {
     color: $text-secondary;
     font-size: 16px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 11px;
+    }
 }
 
 .actions {
+    @media (max-width: 768px) {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 500px) {
+        gap: 4px;
+    }
+
     >button {
         padding: 12px !important;
         margin-left: 10px !important;
+
+        @media (max-width: 768px) {
+            padding: 8px 10px !important;
+            margin-left: 0 !important;
+            flex: 1;
+            font-size: 12px;
+        }
+
+        @media (max-width: 500px) {
+            padding: 6px 8px !important;
+            font-size: 11px;
+        }
     }
 }

@@ -3,6 +3,16 @@
 .resume>h2 {
     margin-bottom: 15px;
     font-size: 18px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
 }
 
 .block,
@@ -15,6 +25,18 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 25px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
 }
 
 .products {
@@ -29,6 +51,17 @@
         border-bottom: 1px solid $border-secondary;
         padding: 10px 0;
 
+        @media (max-width: 768px) {
+            padding: 8px 0;
+        }
+
+        @media (max-width: 500px) {
+            padding: 6px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
         &:last-of-type {
             border: 0;
             padding-bottom: 0;
@@ -39,15 +72,38 @@
             flex-direction: column;
             justify-content: center;
 
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+
             p {
                 font-weight: bold;
                 margin-bottom: -5px;
                 padding-right: 50px;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                    margin-bottom: -3px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 13px;
+                    padding-right: 0;
+                    margin-bottom: 2px;
+                }
             }
 
             span {
                 font-size: 10px;
                 color: $text-secondary;
+
+                @media (max-width: 768px) {
+                    font-size: 11px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 10px;
+                }
             }
         }
 
@@ -55,6 +111,14 @@
             color: $text-secondary;
             font-size: 12px;
             white-space: nowrap;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 11px;
+            }
         }
     }
 }
@@ -66,11 +130,35 @@
         justify-content: space-between;
         margin-bottom: 30px;
 
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 500px) {
+            margin-bottom: 15px;
+        }
+
         >span {
             font-weight: bold;
 
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 13px;
+            }
+
             &:last-of-type {
                 font-size: 18px;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 15px;
+                }
             }
         }
     }

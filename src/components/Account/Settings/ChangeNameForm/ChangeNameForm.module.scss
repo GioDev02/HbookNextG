@@ -19,24 +19,22 @@
         }
     }
 
-    @media (max-width: 500px) {
-
+    @media (max-width: 768px) {
         flex-direction: column;
         width: 100%;
-        gap: 10px;
+        gap: 0;
 
         >div {
             width: 100% !important;
             margin: 0 !important;
-        }
 
-        &:nth-child(2) {
-            margin-left: 0 !important;
-        }
+            &:nth-child(2) {
+                margin-left: 0 !important;
+            }
 
-        &:last-of-type {
-            margin-left: 0 !important;
+            &:last-of-type {
+                margin-left: 0 !important;
+            }
         }
-
     }
 }

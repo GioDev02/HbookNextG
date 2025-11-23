@@ -1,10 +1,21 @@
 .gallery {
     display: flex;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .principal {
     width: 50%;
     padding-right: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 15px;
+        height: 300px;
+    }
 
     >img {
         border-radius: 16px;
@@ -24,27 +35,55 @@
     flex-wrap: wrap;
     padding-left: 10px;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-left: 0;
+    }
+
     >div {
         width: 50%;
 
+        @media (max-width: 768px) {
+            height: 120px;
+        }
+
         &:nth-child(1) {
             padding: 0 10px 10px 0;
+
+            @media (max-width: 768px) {
+                padding: 0 5px 5px 0;
+            }
         }
 
         &:nth-child(2) {
             padding: 0 0 10px 10px;
+
+            @media (max-width: 768px) {
+                padding: 0 0 5px 5px;
+            }
         }
 
         &:nth-child(3) {
             padding: 10px 10px 0 0;
+
+            @media (max-width: 768px) {
+                padding: 5px 5px 0 0;
+            }
         }
 
         &:nth-child(4) {
             padding: 10px 0 0 10px;
+
+            @media (max-width: 768px) {
+                padding: 5px 0 0 5px;
+            }
         }
 
         >img {
             border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
 
             &:hover {
                 opacity: 0.6;
@@ -56,15 +95,33 @@
 
 .carouselContainer {
     height: 100%;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        height: auto;
+        max-height: 80vh;
+        width: 100%;
+    }
 
     >div {
         height: 100%;
+
+        @media (max-width: 768px) {
+            height: auto;
+        }
 
         >div {
             width: 80%;
             height: calc(100% - 100px);
             margin: 0 auto;
             border-radius: 20px;
+
+            @media (max-width: 768px) {
+                width: 95%;
+                height: auto;
+                aspect-ratio: 4/3;
+                min-height: 300px;
+            }
         }
     }
 
@@ -73,17 +130,53 @@
         align-items: flex-end;
         justify-content: center;
         height: 100px;
+        gap: 5px;
+        overflow-x: auto;
+        padding: 10px 0;
+
+        @media (max-width: 768px) {
+            height: auto;
+            gap: 3px;
+            padding: 8px 5px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 2px;
+            }
+        }
 
         >li {
             height: 100%;
             width: 150px;
+            min-width: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 5px;
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+                width: 80px;
+                min-width: 80px;
+                height: 80px;
+                margin: 0 3px;
+            }
 
             img {
                 border-radius: 10px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
 
                 &:hover {
                     cursor: pointer;

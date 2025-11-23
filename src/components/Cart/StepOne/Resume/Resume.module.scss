@@ -4,12 +4,32 @@
     >h2 {
         margin-bottom: 15px;
         font-size: 18px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 500px) {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
     }
 
     a {
         margin-top: 20px;
         color: $text-secondary;
         font-size: 12px;
+
+        @media (max-width: 768px) {
+            font-size: 11px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 10px;
+            margin-top: 12px;
+        }
 
         &:hover {
             color: $primary;
@@ -25,6 +45,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 12px;
+        border-radius: 10px;
+    }
 }
 
 .prices {
@@ -33,13 +63,33 @@
     width: 100%;
     margin-bottom: 20px;
 
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 12px;
+    }
+
     >div {
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 500px) {
+            margin-bottom: 8px;
+        }
+
         >span {
             font-size: 13px;
             color: $text-secondary;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 12px;
+            }
         }
 
         &:last-of-type {
@@ -47,8 +97,21 @@
                 margin-top: 10px;
                 color: $text-primary;
 
+                @media (max-width: 500px) {
+                    margin-top: 5px;
+                }
+
                 &:last-of-type {
                     font-size: 16px;
+                    font-weight: bold;
+
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
+
+                    @media (max-width: 500px) {
+                        font-size: 15px;
+                    }
                 }
             }
         }

@@ -11,19 +11,53 @@
     align-items: center;
     border: 2px solid transparent;
 
+    @media (max-width: 768px) {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 12px;
+        margin-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     &:hover {
         cursor: pointer;
         border-color: $primary;
     }
 
-    >div>span {
-        font-size: 12px;
-        color: $text-secondary;
+    >div {
+        @media (max-width: 500px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        >span {
+            font-size: 12px;
+            color: $text-secondary;
+
+            @media (max-width: 768px) {
+                font-size: 11px;
+            }
+        }
     }
 
     >p {
         font-weight: bold;
         font-size: 20px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -32,6 +66,18 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid $border-secondary;
+
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     &:last-of-type {
         margin-bottom: 0;
@@ -43,11 +89,28 @@
         width: 100px;
         border-radius: 8px;
         margin-right: 20px;
+
+        @media (max-width: 768px) {
+            width: 80px;
+            margin-right: 15px;
+        }
+
+        @media (max-width: 500px) {
+            width: 70px;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
     }
 
     >div {
         display: flex;
         width: 100%;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+        }
 
         .info {
             display: flex;
@@ -55,14 +118,34 @@
             padding: 10px 0;
             width: 100%;
 
+            @media (max-width: 500px) {
+                padding: 0;
+            }
+
             p {
                 &:first-of-type {
                     font-weight: bold;
+
+                    @media (max-width: 768px) {
+                        font-size: 15px;
+                    }
+
+                    @media (max-width: 500px) {
+                        font-size: 13px;
+                    }
                 }
 
                 &:last-of-type {
                     color: $text-secondary;
                     font-size: 12px;
+
+                    @media (max-width: 768px) {
+                        font-size: 12px;
+                    }
+
+                    @media (max-width: 500px) {
+                        font-size: 11px;
+                    }
                 }
             }
         }
@@ -71,9 +154,23 @@
             display: flex;
             align-items: center;
 
+            @media (max-width: 500px) {
+                justify-content: space-between;
+                width: 100%;
+            }
+
             span {
                 margin-left: 10px;
                 font-weight: bold;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 13px;
+                    margin-left: 0;
+                }
             }
         }
     }
@@ -86,14 +183,43 @@
     padding: 20px;
     border-radius: 10px;
 
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 12px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
     .title {
         font-weight: bold;
         font-size: 16px;
+
+        @media (max-width: 768px) {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
     }
 
     .addressInfo {
         color: $text-secondary;
         font-size: 16px;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 }
 
@@ -102,4 +228,12 @@
     font-size: 20px;
     font-weight: bold;
     color: $primary;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
 }

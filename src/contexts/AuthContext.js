@@ -31,7 +31,7 @@ export function AuthProvider(props) {
 
     const login = async (token) => {
         try {
-            console.log(token)
+            //console.log(token)
             //TODO: Setear el token en el localStorage
             tokenCtrl.setToken(token);
             //TODO: Obtener lso datos del usuario

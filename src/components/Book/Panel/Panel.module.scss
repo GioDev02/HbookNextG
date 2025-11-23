@@ -5,15 +5,32 @@
     display: flex !important;
     margin-top: -150px;
 
-    @media (max-width: 500px) {}
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: -90px;
+    }
 }
 
 .imgContiner {
     width: 50%;
     padding-right: 12px;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 0;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     >img {
         border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 768px) {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
     }
 }
 
@@ -21,6 +38,12 @@
     width: 50%;
     padding-left: 12px;
     height: 100%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 15px;
+    }
 
     >div {
         background-color: $background-quaternary__blur;
@@ -31,8 +54,19 @@
         flex-direction: column;
         align-items: center;
 
+        @media (max-width: 768px) {
+            padding: 12px;
+            gap: 8px;
+        }
+
         >h2 {
             margin-bottom: 10px;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 5px;
+            }
         }
     }
 }
@@ -45,6 +79,15 @@
     border-radius: 50px;
     margin-bottom: 40px;
 
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        gap: 8px;
+        justify-content: center;
+        padding: 8px 10px;
+    }
+
     >span {
         display: flex;
         align-items: center;
@@ -53,11 +96,23 @@
         margin-right: 10px;
         font-size: 12px;
 
+        @media (max-width: 768px) {
+            border-right: 0;
+            padding-right: 0;
+            margin-right: 0;
+            font-size: 11px;
+        }
+
         &:first-of-type {
             >img {
                 filter: brightness(0) invert(1);
                 height: 18px;
                 margin-right: 10px;
+
+                @media (max-width: 768px) {
+                    height: 14px;
+                    margin-right: 5px;
+                }
             }
         }
 
@@ -72,6 +127,10 @@
                 color: $success;
                 margin-right: 5px;
                 font-size: 14px;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -79,13 +138,26 @@
 
 .price {
     margin-bottom: 40px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
 
     .originalPrice {
         font-size: 18px;
         text-decoration: line-through;
 
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+
         >i {
             font-size: 12px;
+
+            @media (max-width: 768px) {
+                font-size: 10px;
+            }
         }
     }
 
@@ -94,10 +166,19 @@
         color: $primary;
         font-weight: bold;
         font-size: 18px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            margin: 0 5px;
+        }
     }
 
     .price {
         font-size: 35px;
+
+        @media (max-width: 768px) {
+            font-size: 22px;
+        }
     }
 }
 
@@ -107,4 +188,10 @@
     top: 15px;
     right: 15px;
     font-size: 20px !important;
+
+    @media (max-width: 768px) {
+        top: 10px;
+        right: 10px;
+        font-size: 16px !important;
+    }
 }

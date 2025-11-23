@@ -16,7 +16,6 @@ export async function getServerSideProps(context) {
     const bookCtrl = new Book();
     const responseBook = await bookCtrl.getBooksByCategorySlug(category, page);
 
-    console.log(context);
     return {
         props: {
             category: responseCategory,

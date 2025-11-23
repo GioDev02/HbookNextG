@@ -6,8 +6,6 @@ export { default } from "./search";
 
 export async function getServerSideProps(context) {
 
-
-    console.log("search context: ", context)
     const { query: { s, page = 1 } } = context;
 
     const bookCtrl = new Book();

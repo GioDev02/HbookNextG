@@ -12,9 +12,7 @@ import {
 
 export default function SearchPage(props) {
     const { books, pagination, searchText } = props;
-    console.log(searchText);
     const hasResult = size(books) > 0;
-    console.log("props de indexServer", props);
     useEffect(() => {
         document.getElementById("search-books").focus();
     }, []);

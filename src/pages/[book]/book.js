@@ -5,8 +5,6 @@ import { Separator, Seo } from "@/components/Shared";
 export default function BookPage(props) {
     const { book } = props;
     const wallpaper = book.attributes.wallpaper;
-    console.log("Book", book)
-    console.log("dinamica", props);
     return (
         <>
             <Seo

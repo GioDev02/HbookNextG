@@ -18,7 +18,7 @@ export function GridBooks(props) {
                         <Link href={`/${book.attributes.slug}`}>
                             <div>
                                 <img
-                                    src={`${ENV.SERVER_HOST}${cover.attributes.url}`} />
+                                    src={cover.attributes.url} />
 
                                 {book.attributes.discount > 0 && (
                                     <Label.Discount className={styles.discount}>

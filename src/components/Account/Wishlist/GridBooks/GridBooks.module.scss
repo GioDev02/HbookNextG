@@ -4,7 +4,10 @@
     margin: -10px;
     margin-top: 20px;
 
-    @media (max-width: 500px) {}
+    @media (max-width: 500px) {
+        margin: -5px;
+        margin-top: 10px;
+    }
 }
 
 .book {
@@ -12,11 +15,17 @@
     width: 33.33%;
     margin-bottom: 10px;
 
-    @media (max-width: 500px) {}
+    @media (max-width: 500px) {
+        width: 50%;
+    }
 
     >a>div {
         position: relative;
         padding: 10px 10px 0 10px;
+
+        @media (max-width: 500px) {
+            padding: 5px 5px 0 5px;
+        }
 
         &:hover {
             opacity: 0.6;
@@ -26,6 +35,30 @@
             padding-top: 0px;
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
+            gap: 3px;
+
+            @media (max-width: 500px) {
+                gap: 2px;
+            }
+
+            >span {
+                font-size: 14px;
+
+                @media (max-width: 500px) {
+                    font-size: 11px;
+                    line-height: 1.2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                &:first-child {
+                    font-weight: 500;
+                }
+            }
         }
 
         >img {
@@ -37,10 +70,19 @@
             position: absolute;
             left: 10px;
             bottom: 5px;
+
+            @media (max-width: 500px) {
+                left: 5px;
+            }
         }
 
         .price {
             font-size: 18px;
+
+            @media (max-width: 500px) {
+                font-size: 12px;
+                font-weight: bold;
+            }
         }
     }
 }
@@ -51,4 +93,10 @@
     right: 15px;
     font-size: 20px !important;
     z-index: 1;
+
+    @media (max-width: 500px) {
+        top: 10px;
+        right: 10px;
+        font-size: 16px !important;
+    }
 }

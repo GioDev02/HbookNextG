@@ -3,6 +3,16 @@
 .addresses>h2 {
     margin-bottom: 15px;
     font-size: 18px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
 }
 
 .address {
@@ -14,6 +24,18 @@
     flex-direction: column;
     margin-bottom: 10px;
 
+    @media (max-width: 768px) {
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 6px;
+    }
+
     &:hover {
         cursor: pointer;
         border-color: $primary;
@@ -23,7 +45,34 @@
         border-color: $primary;
     }
 
-    >p:last-of-type {
-        color: $text-secondary;
+    >p {
+        &:first-of-type {
+            font-weight: bold;
+            margin-bottom: 5px;
+
+            @media (max-width: 768px) {
+                font-size: 15px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 13px;
+            }
+        }
+
+        &:last-of-type {
+            color: $text-secondary;
+            font-size: 14px;
+            line-height: 20px;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+                line-height: 18px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 11px;
+                line-height: 16px;
+            }
+        }
     }
 }
