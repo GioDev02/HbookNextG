@@ -14,6 +14,8 @@ export function WishlistIcon(props) {
 
 
     useEffect(() => {
+        if (!user) return;
+
         (async () => {
             try {
                 const response = await wishlistCtrl.check(user.id, bookId);
@@ -23,20 +25,30 @@ export function WishlistIcon(props) {
                 console.error(error);
             }
         })();
-    }, [bookId]);
+    }, [bookId, user]);
 
     const addWishlist = async () => {
-        const response = await wishlistCtrl.add(user.id, bookId);
-        setHasWishlist(response);
+        try {
+            const response = await wishlistCtrl.add(user.id, bookId);
+            setHasWishlist(response);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const deleteWishlist = async () => {
         try {
+            // Verificar que hasWishlist sea un objeto con id
+            if (!hasWishlist || typeof hasWishlist !== 'object' || !hasWishlist.id) {
+                console.error("No valid wishlist object to delete");
+                return;
+            }
+
             await wishlistCtrl.delete(hasWishlist.id);
             setHasWishlist(false);
 
-            if (removeCallback) { /**SI EXISTE REMOVECALLBACK, YA QUE LA OTRA OPCION ES QUE SEA NULL*/
-                removeCallback(); /**Siempre existiria removecallback per solo se ejacutara cuando llame a deleteWishlit */
+            if (removeCallback) {
+                removeCallback();
             }
         } catch (error) {
             console.error(error);
